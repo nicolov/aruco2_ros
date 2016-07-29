@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package>
+  <name>aruco2_gazebo_model_example</name>
+  <version>0.0.1</version>
+  <description>Example gazebo model with ARUCO fiducial marker</description>
+  <maintainer email="nicolov@users.noreply.github.com">nicolov</maintainer>
+
+  <license>BSD</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <build_depend>gazebo</build_depend>
+  <run_depend>gazebo_ros</run_depend>
+
+  <export>
+    <gazebo_ros gazebo_media_path="${prefix}"/>
+  </export>
+</package>

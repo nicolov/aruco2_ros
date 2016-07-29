@@ -1,0 +1,8 @@
+<launch>
+    <node pkg="aruco2_ros" type="aruco2_detector_node" name="aruco2_detector_node" required="true">
+    </node>
+
+    <node name="image_republish" pkg="image_transport" type="republish" required="true"
+          args="compressed in:=/camera/image_mono raw out:=/camera/image_mono">
+    </node>
+</launch>

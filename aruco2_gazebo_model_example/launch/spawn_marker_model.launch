@@ -1,0 +1,8 @@
+<launch>
+  <node name="spawn_model"
+        pkg="gazebo_ros"
+        type="spawn_model"
+        args="-file $(find aruco2_gazebo_model_example)/models/aruco_1/aruco_1.sdf -sdf -model aruco_1"
+        output="screen">
+  </node>
+</launch>

@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>aruco2_ros</name>
+  <version>0.0.1</version>
+  <description>
+    A simple ROS node to detect fiducial markers using the aruco2 library.
+  </description>
+  <maintainer email="nicolov@users.noreply.github.com">nicolov</maintainer>
+  <license>BSD</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <depend>cv_bridge</depend>
+  <depend>dynamic_reconfigure</depend>
+  <depend>geometry_msgs</depend>
+  <depend>image_transport</depend>
+  <depend>roscpp</depend>
+  <depend>tf</depend>
+  <depend>aruco2_catkin</depend>
+  <depend>aruco2_msgs</depend>
+</package>

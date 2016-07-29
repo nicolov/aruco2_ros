@@ -1,0 +1,13 @@
+material aruco2/m1
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture m1.png
+      }
+    }
+  }
+}

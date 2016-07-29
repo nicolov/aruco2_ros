@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<package>
+  <name>aruco2_catkin</name>
+  <version>2.0.7</version>
+  <description>Catkin wrapper for the aruco library version 2.x</description>
+
+  <maintainer email="nicolov@users.noreply.github.com">nicolov</maintainer>
+
+  <license>BSD</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <export></export>
+</package>
