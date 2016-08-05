@@ -1,8 +1,18 @@
 <launch>
-    <node pkg="aruco2_ros" type="aruco2_detector_node" name="aruco2_detector_node" required="true">
+    <arg name="marker_size" default="0.2" />
+
+    <node pkg="aruco2_ros"
+          type="aruco2_detector_node"
+          name="aruco2_detector_node"
+          required="true"
+          output="screen">
+        <param name="marker_size" value="$(arg marker_size)" type="double" />
     </node>
 
-    <node name="image_republish" pkg="image_transport" type="republish" required="true"
+    <node pkg="image_transport"
+          type="republish"
+          name="image_republish"
+          required="true"
           args="compressed in:=/camera/image_mono raw out:=/camera/image_mono">
     </node>
 </launch>

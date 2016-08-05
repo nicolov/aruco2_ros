@@ -17,12 +17,16 @@ namespace aruco2_ros {
         ros::Publisher markers_pub_;
         tf::TransformBroadcaster tfbr_;
 
+        double marker_size_;
         aruco::MarkerDetector detector_;
         aruco::CameraParameters camera_params_;
         std::vector<aruco::Marker> markers_;
 
         DetectorNode() : nh_("~"),
-                      it_(nh_) {
+                         it_(nh_) {
+            nh_.param<double>("marker_size", marker_size_, 0.1);
+            ROS_INFO_STREAM("Using marker size: " << marker_size_);
+
             img_sub_ = it_.subscribe("/camera/image_mono", 1, &DetectorNode::image_callback, this);
 
             ROS_INFO_STREAM("Waiting for calibration...");
@@ -46,7 +50,7 @@ namespace aruco2_ros {
             }
 
             markers_.clear();
-            detector_.detect(cv_ptr->image, markers_, camera_params_, 0.05, false);
+            detector_.detect(cv_ptr->image, markers_, camera_params_, marker_size_, false);
 
             {
                 aruco2_msgs::MarkerArray markers_msg;
